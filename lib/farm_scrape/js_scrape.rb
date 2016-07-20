@@ -1,11 +1,8 @@
-require 'bundler'
-Bundler.require
+#require 'bundler'
+#Bundler.require
 
 require_relative 'modules/scrape_utilities'
-
-# require 'capybara'
-require 'capybara/poltergeist'
-# require 'nokogiri'
+#require 'capybara/poltergeist'
 
 class JsScrape
   include ScrapeUtilities

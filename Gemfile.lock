@@ -1,8 +1,16 @@
 GIT
-  remote: https://github.com/jessethebuilder/farm_ruby
+  remote: C:\Users\Bucky\Desktop\jesseweb\farm_ruby
   revision: 0ac683e4bd77baf81c8ef16d1a59c92954d5af09
   specs:
     farm_ruby (0.1.0)
+
+PATH
+  remote: .
+  specs:
+    farm_scrape (0.1.0)
+      capybara (~> 2.7.1)
+      nokogiri (~> 1.6.8)
+      poltergeist (~> 1.10.0)
 
 GEM
   remote: https://rubygems.org/
@@ -31,6 +39,7 @@ GEM
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (10.5.0)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -41,10 +50,10 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  capybara
+  bundler (~> 1.12)
   farm_ruby!
-  nokogiri
-  poltergeist
+  farm_scrape!
+  rake (~> 10.0)
 
 BUNDLED WITH
    1.12.5
