@@ -5,9 +5,9 @@ class JsScrape
   include ScrapeUtilities
   attr_accessor :ghost
 
-  def initialize(proxy: false, timeout: 120)
+  def initialize(proxy: false, timeout: 120, :phantomjs => nil)
     #timout is not implemented
-    build_ghost(random_proxy, :options => {:timeout => timeout})
+    build_ghost(random_proxy, :options => {:timeout => timeout, :phantomjs => phantomjs})
   end
 
   def JsScrape.with_random_proxy
