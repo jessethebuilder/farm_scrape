@@ -40,18 +40,17 @@ module ScrapeUtilities
     F.write("#{path}", json.to_json) if save_file
   end
 
-
-
   def log_to_file(msg)
     f = File.open('log.log', 'a')
     f.write(msg)
     f.close
   end
 
-  def wait_until
+  def wait_until(puts: nil)
     #expects block
     while true
-      sleep 1
+      sleep 0.1
+      puts(puts) if puts
       return if yield
     end
   end
