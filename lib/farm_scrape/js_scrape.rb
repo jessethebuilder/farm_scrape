@@ -5,7 +5,7 @@ class JsScrape
   include ScrapeUtilities
   attr_accessor :ghost
 
-  def initialize(proxy: false, timeout: 120, phantomjs: nil)
+  def initialize(proxy: false, timeout: 120, phantomjs: nil, debug: true)
     build_ghost(random_proxy, :options => {:timeout => timeout, :phantomjs => phantomjs, debug: true})
   end
 
