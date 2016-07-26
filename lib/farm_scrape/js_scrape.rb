@@ -6,7 +6,6 @@ class JsScrape
   attr_accessor :ghost
 
   def initialize(proxy: false, timeout: 120, phantomjs: nil)
-    #timout is not implemented
     build_ghost(random_proxy, :options => {:timeout => timeout, :phantomjs => phantomjs})
   end
 
