@@ -56,13 +56,13 @@ class GhostMaker
   end
 end
 
-module Cliver
-# This hack is required for Windows.
-  class ShellCapture
-    def initialize(_command)
-      @stderr = ''
-      @stdout = '2.1.1'
-      @command_found = true
-    end
-  end
-end
+# module Cliver
+# # This hack is required for Windows.
+#   class ShellCapture
+#     def initialize(_command)
+#       @stderr = ''
+#       @stdout = '2.1.1'
+#       @command_found = true
+#     end
+#   end
+# end
