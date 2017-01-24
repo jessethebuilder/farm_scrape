@@ -29,6 +29,16 @@ class JsScrape
     Nokogiri::HTML(html)
   end
 
+  #--- Aliases ---
+
+  def cap
+    page
+  end
+
+  def noko
+    doc
+  end
+
   private
 
   def build_ghost(proxy, options: {})
