@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'capybara'
   spec.add_dependency 'poltergeist'
   spec.add_dependency 'nokogiri'
+  spec.add_dependency 'mechanize'
 
 
   # spec.add_dependency 'json', '~> 2.0.1'

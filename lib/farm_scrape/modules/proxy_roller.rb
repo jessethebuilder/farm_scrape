@@ -1,7 +1,7 @@
 module ProxyRoller
   def proxy_roller_data
     unless @proxy_roller_data
-      f = F.read(File.expand_path('data/proxie_list.txt', File.dirname(__FILE__))).chomp
+      f = F.read(File.expand_path('data/proxy_list.txt', File.dirname(__FILE__))).chomp
       arr = f.each_line.map{ |l| l.chomp }
       @proxy_roller_data = []
       @proxy_roller_data << arr[0..(arr.length / 2 - 1)]

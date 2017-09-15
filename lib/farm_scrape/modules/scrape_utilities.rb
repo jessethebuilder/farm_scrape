@@ -54,9 +54,4 @@ module ScrapeUtilities
       return if yield
     end
   end
-
-
-
 end
-
-public
