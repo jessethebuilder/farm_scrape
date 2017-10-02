@@ -46,12 +46,15 @@ module ScrapeUtilities
     f.close
   end
 
-  def wait_until(puts: nil)
+  def wait_until(puts: nil, tries: nil)
     #expects block
+    count = 0
     while true
       sleep 0.1
       puts(puts) if puts
       return if yield
+      count += 1
+      return if count == tries
     end
   end
 end
