@@ -5,9 +5,10 @@ class JsScrape
   include ScrapeUtilities
   attr_accessor :ghost
 
-  def initialize(proxy: false, timeout: 120, phantomjs: nil, debug: false, phantom_debug: false)
+  def initialize(proxy: false, timeout: 120, phantomjs: nil, debug: false, phantomjs_debug: false, phantomjs_options: nil)
     @debug = debug
-    build_ghost(random_proxy, :options => {:timeout => timeout, :phantomjs => phantomjs, debug: phantom_debug})
+    build_ghost(random_proxy, :options => {timeout: timeout, phantomjs: phantomjs,
+                                           debug: phantomjs_debug, phantomjs_options: phantomjs_options})
   end
 
   def page
@@ -27,6 +28,8 @@ class JsScrape
       raise cap_error if try_again == retries
       try_again += 1
       puts "FarmScrape: --- Capybara Timeout #{try_again} of #{retries}"
+      puts "#{cap_error.message}\n"
+      cap_error.backtrace.each{ |b| puts b }
     end
   end
 
@@ -65,9 +68,12 @@ class GhostMaker
   def initialize(proxy_hash: nil, timeout: 30, debug: false,
                  js_errors: false, phantomjs: nil, phantomjs_options: nil)
     options = {timeout: timeout, debug: debug, js_errors: js_errors,
-               phantomjs_options: nil}
+               phantomjs_options: phantomjs_options}
     options[:phantomjs] = phantomjs if phantomjs
 
+    # Capybara.register_driver :farm_poltergeist do |app|
+    #   Capybara::Poltergeist::Driver.new(app, options)
+    # end
     Capybara.register_driver :farm_poltergeist do |app|
       Capybara::Poltergeist::Driver.new(app, options)
     end
