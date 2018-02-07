@@ -19,10 +19,11 @@ class JsScrape
     @ghost.html
   end
 
-  def goto(path, retries: 10)
+  def goto(path, retries: 10, sleep_time: nil)
     try_again = 0
     begin
       @ghost.visit path
+      sleep sleep_time if sleep_time
       log "Visiting: #{path}" if @debug
     rescue Capybara::Poltergeist::StatusFailError => cap_error
       raise cap_error if try_again == retries
