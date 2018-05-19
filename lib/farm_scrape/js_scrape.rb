@@ -38,6 +38,11 @@ class JsScrape
     Nokogiri::HTML(html)
   end
 
+  def reset_ghost
+    @ghost.driver.quit
+    build_ghost 
+  end
+
   #--- Aliases ---
 
   def cap
