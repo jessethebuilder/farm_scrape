@@ -7,8 +7,8 @@ class JsScrape
 
   def initialize(proxy: false, timeout: 120, phantomjs: nil, debug: false, phantomjs_debug: false, phantomjs_options: nil)
     @debug = debug
-    build_ghost(random_proxy, :options => {timeout: timeout, phantomjs: phantomjs,
-                                           debug: phantomjs_debug, phantomjs_options: phantomjs_options})
+    build_ghost(:options => {timeout: timeout, phantomjs: phantomjs,
+                             debug: phantomjs_debug, phantomjs_options: phantomjs_options})
   end
 
   def page
@@ -40,7 +40,7 @@ class JsScrape
 
   def reset_ghost
     @ghost.driver.quit
-    build_ghost 
+    build_ghost
   end
 
   #--- Aliases ---
