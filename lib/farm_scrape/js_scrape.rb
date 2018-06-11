@@ -40,7 +40,7 @@ class JsScrape
     Nokogiri::HTML(html)
   end
 
-  def reset_ghost
+  def reset
     @ghost.driver.quit
     build_ghost
   end
