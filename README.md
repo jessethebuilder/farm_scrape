@@ -27,10 +27,15 @@ def initialize(proxy: false, timeout: 120, phantomjs: nil, debug: false, phantom
 ### Params
 
 proxy: Whether to use a random proxy.
+
 timeout: In Seconds. Default is 120.
+
 phantomjs: Provide a path to phantomjs (useful if dev environment is different than production).
+
 debug: Output gem-specific info for debugging.
+
 phantomjs_debug: Output phantom.js input for debugging.
+
 phantomjs_options: Accepts an array of command line options for phantom.js.
 
 ### Methods
@@ -38,11 +43,17 @@ phantomjs_options: Accepts an array of command line options for phantom.js.
 Exposes a Capybara page object. See: https://github.com/teamcapybara/capybara for details.
 
 `page` returns the Capybara page object.
+
 `html` returns the HTML for the Capybara page object.
+
 `goto(path, retries: 10, sleep_time: nil)` follows path. Will retry as many times as specified by param. sleep_time: indicates how long to sleep after page retrieval.
+
 `doc` returns Nokogiri object from HTML.
+
 `reset` destroys and rebuilds Capybara object. Useful for dealing with memory overflows.
+
 `cap` alias of `page`.
+
 `noko` alias of `doc`.
 
 ## License
